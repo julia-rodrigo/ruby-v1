@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://import/Dialogue/Dialogue.png" type="Texture" id=2]
+[ext_resource path="res://Interactions/Font/organo.regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+
+[sub_resource type="DynamicFont" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 3 )
+
+[node name="Interact_Field" type="Spatial"]
+
+[node name="interact_field" type="CanvasLayer" parent="."]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="interact_field"]
+anchor_right = 0.03
+anchor_bottom = 0.002
+margin_left = 365.0
+margin_top = 518.0
+margin_right = 531.28
+margin_bottom = 546.8
+texture = ExtResource( 2 )
+patch_margin_left = 10
+patch_margin_top = 5
+patch_margin_right = 15
+patch_margin_bottom = 7
+
+[node name="Interact" type="RichTextLabel" parent="interact_field/NinePatchRect"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 219.0
+margin_bottom = 33.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/mono_font = SubResource( 1 )
+custom_fonts/bold_italics_font = SubResource( 2 )
+custom_fonts/italics_font = SubResource( 3 )
+custom_fonts/bold_font = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 5 )
+text = "Interact (space bar)"
