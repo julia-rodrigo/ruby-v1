@@ -334,7 +334,7 @@ nodes/Run/position = Vector2( 260, 240 )
 "nodes/Up and Down 2/node" = SubResource( 47 )
 "nodes/Up and Down 2/position" = Vector2( 0, 360 )
 nodes/output/position = Vector2( 820, 40 )
-node_connections = [ "Run", 0, "Left and Right 2", "Run", 1, "Up and Down 2", "Blend2", 0, "Idel", "Blend2", 1, "Run", "Idel", 0, "Up and Down", "Idel", 1, "Left and Right", "output", 0, "Blend2" ]
+node_connections = [ "Blend2", 0, "Idel", "Blend2", 1, "Run", "Run", 0, "Left and Right 2", "Run", 1, "Up and Down 2", "Idel", 0, "Up and Down", "Idel", 1, "Left and Right", "output", 0, "Blend2" ]
 
 [node name="Ruby" type="KinematicBody"]
 collision_layer = 2
@@ -346,7 +346,7 @@ alpha_cut = 2
 texture = ExtResource( 6 )
 hframes = 4
 vframes = 3
-frame = 5
+frame = 7
 
 [node name="IdelBackLeft" type="Sprite3D" parent="."]
 visible = false
@@ -377,7 +377,7 @@ alpha_cut = 2
 texture = ExtResource( 10 )
 hframes = 4
 vframes = 3
-frame = 5
+frame = 7
 
 [node name="IdelFront" type="Sprite3D" parent="."]
 transform = Transform( 0.999999, 0.00141372, 2.56885e-12, -0.00141372, 0.999999, 3.58403e-09, 2.56885e-12, -3.58403e-09, 1, 0, 0, 0 )
@@ -386,7 +386,7 @@ alpha_cut = 2
 texture = ExtResource( 8 )
 hframes = 4
 vframes = 3
-frame = 5
+frame = 7
 
 [node name="IdelLeft" type="Sprite3D" parent="."]
 visible = false
@@ -417,7 +417,7 @@ alpha_cut = 2
 texture = ExtResource( 5 )
 hframes = 4
 vframes = 3
-frame = 5
+frame = 7
 
 [node name="RunFront" type="Sprite3D" parent="."]
 visible = false
@@ -425,7 +425,7 @@ alpha_cut = 2
 texture = ExtResource( 12 )
 hframes = 4
 vframes = 3
-frame = 5
+frame = 7
 
 [node name="RunBack" type="Sprite3D" parent="."]
 visible = false
@@ -433,7 +433,7 @@ alpha_cut = 2
 texture = ExtResource( 13 )
 hframes = 4
 vframes = 3
-frame = 5
+frame = 7
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Idel_Back = SubResource( 13 )
