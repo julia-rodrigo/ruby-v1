@@ -8,15 +8,99 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "Adventure",
+"language": "GDScript",
+"path": "res://Resource/Adventures/AdventureClasses/Adventure.gd"
+}, {
+"base": "Resource",
+"class": "AdventureLog",
+"language": "GDScript",
+"path": "res://Resource/Inventory/AdventureLog.gd"
+}, {
+"base": "Resource",
+"class": "Creaventory",
+"language": "GDScript",
+"path": "res://Resource/Inventory/Creaventory.gd"
+}, {
+"base": "TextureRect",
+"class": "Draggable",
+"language": "GDScript",
+"path": "res://Resource/Items/ItemSprites/ItemSprite.gd"
+}, {
+"base": "Adventure",
+"class": "FightingAdventure",
+"language": "GDScript",
+"path": "res://Resource/Adventures/AdventureClasses/FightingAdventure.gd"
+}, {
+"base": "Resource",
+"class": "Inventory",
+"language": "GDScript",
+"path": "res://Resource/Inventory/Inventory.gd"
+}, {
+"base": "Resource",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Resource/Items/ItemClass/Item.gd"
+}, {
+"base": "Adventure",
+"class": "ItemAdventure",
+"language": "GDScript",
+"path": "res://Resource/Adventures/AdventureClasses/ItemAdventure.gd"
+}, {
+"base": "Resource",
+"class": "RandomCreature",
+"language": "GDScript",
+"path": "res://Resource/Random/RandomCreature.gd"
+}, {
+"base": "Node",
+"class": "RandomFinder",
+"language": "GDScript",
+"path": "res://Resource/Random/RandomFinder.gd"
+}, {
+"base": "Item",
+"class": "foodItem",
+"language": "GDScript",
+"path": "res://Resource/Items/ItemClass/food_item_class.gd"
+} ]
+_global_script_class_icons={
+"Adventure": "",
+"AdventureLog": "",
+"Creaventory": "",
+"Draggable": "",
+"FightingAdventure": "",
+"Inventory": "",
+"Item": "",
+"ItemAdventure": "",
+"RandomCreature": "",
+"RandomFinder": "",
+"foodItem": ""
+}
+
 [application]
 
 config/name="Ruby version1"
-run/main_scene="res://Ruby.tscn"
+run/main_scene="res://World/Levels/World.tscn"
 
 [autoload]
 
-State="*res://scripts/State.gd"
-SaveFile="*res://scripts/save_file.gd"
+Global="*res://AutoLoad/Global.gd"
+Player="*res://AutoLoad/Player.gd"
+Creature="*res://AutoLoad/Creature.gd"
+ItemDatabase="*res://AutoLoad/ItemDatabase.gd"
+CreatureDatabase="*res://AutoLoad/CreatureDatabase.gd"
+Opponent="*res://AutoLoad/Opponent.gd"
+Quest="*res://AutoLoad/Quest.gd"
+AdventureDatabase="*res://AutoLoad/AdventureDatabase.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/GodotAsyncLoader/plugin.cfg" )
+
+[global]
+
+export=false
 
 [gui]
 

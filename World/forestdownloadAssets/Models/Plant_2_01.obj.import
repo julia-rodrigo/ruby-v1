@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Plant_2_01.obj-c983b4608d8826e14ae898b1d0803cef.mesh"
+
+[deps]
+
+files=[ "res://.import/Plant_2_01.obj-c983b4608d8826e14ae898b1d0803cef.mesh" ]
+
+source_file="res://World/forestdownloadAssets/Models/Plant_2_01.obj"
+dest_files=[ "res://.import/Plant_2_01.obj-c983b4608d8826e14ae898b1d0803cef.mesh", "res://.import/Plant_2_01.obj-c983b4608d8826e14ae898b1d0803cef.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

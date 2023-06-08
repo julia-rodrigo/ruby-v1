@@ -1,0 +1,193 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Menu/Bag/CreaturePanelDraggable.gd" type="Script" id=1]
+[ext_resource path="res://Interactions/ButtonStyles/panelStyles/InnerPanel.tres" type="StyleBox" id=2]
+[ext_resource path="res://Resource/Random/Creatures2DSprites/Creature2DSprite.tscn" type="PackedScene" id=3]
+[ext_resource path="res://import/googleFonts/Poppins/Poppins-Medium.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Menu/Bag/BagCreature.gd" type="Script" id=5]
+[ext_resource path="res://Interactions/ButtonStyles/PressedButton.tres" type="StyleBox" id=7]
+[ext_resource path="res://Interactions/ButtonStyles/disabledButton.tres" type="StyleBox" id=8]
+[ext_resource path="res://Interactions/ButtonStyles/DefaultButton.tres" type="StyleBox" id=9]
+[ext_resource path="res://Interactions/ButtonStyles/HoverButton.tres" type="StyleBox" id=10]
+[ext_resource path="res://import/googleFonts/Poppins/Poppins-Regular.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://Interactions/ButtonStyles/yellowtextboxStyle/creature_defeated.tres" type="StyleBox" id=12]
+[ext_resource path="res://Interactions/ButtonStyles/yellowtextboxStyle/creature_selected_textbox.tres" type="StyleBox" id=14]
+
+[sub_resource type="DynamicFont" id=1]
+size = 13
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 12
+font_data = ExtResource( 11 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0, 1, 0.717647, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.290064, 0.707031, 0.589299, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.223529, 0.2, 0.2, 0.901961 )
+
+[node name="Creature" type="Button"]
+margin_right = 206.0
+margin_bottom = 169.0
+rect_min_size = Vector2( 206, 169 )
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = ExtResource( 14 )
+custom_styles/disabled = ExtResource( 12 )
+custom_styles/normal = ExtResource( 2 )
+script = ExtResource( 5 )
+
+[node name="inner" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+custom_constants/margin_right = 13
+custom_constants/margin_top = 10
+custom_constants/margin_left = 13
+custom_constants/margin_bottom = 10
+
+[node name="Content" type="VBoxContainer" parent="inner"]
+margin_left = 13.0
+margin_top = 10.0
+margin_right = 193.0
+margin_bottom = 159.0
+size_flags_horizontal = 3
+
+[node name="NameArea" type="HBoxContainer" parent="inner/Content"]
+margin_right = 180.0
+margin_bottom = 19.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_constants/separation = 12
+
+[node name="Label" type="Label" parent="inner/Content/NameArea"]
+margin_right = 43.0
+margin_bottom = 19.0
+mouse_filter = 1
+size_flags_horizontal = 5
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Name:"
+
+[node name="name" type="Label" parent="inner/Content/NameArea"]
+margin_left = 55.0
+margin_right = 80.0
+margin_bottom = 19.0
+mouse_filter = 1
+size_flags_horizontal = 5
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Tihi"
+uppercase = true
+
+[node name="activity" type="MarginContainer" parent="inner/Content/NameArea"]
+margin_left = 92.0
+margin_right = 180.0
+margin_bottom = 19.0
+mouse_filter = 1
+size_flags_horizontal = 3
+
+[node name="Leader" type="Button" parent="inner/Content/NameArea/activity"]
+visible = false
+margin_left = 18.0
+margin_right = 88.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 70, 0 )
+size_flags_horizontal = 12
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = ExtResource( 10 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
+text = "LEADER"
+
+[node name="Selected" type="Button" parent="inner/Content/NameArea/activity"]
+visible = false
+margin_left = 18.0
+margin_right = 88.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 70, 0 )
+size_flags_horizontal = 12
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = ExtResource( 10 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
+text = "SELECTED"
+
+[node name="Status" type="Button" parent="inner/Content/NameArea/activity"]
+visible = false
+margin_left = 18.0
+margin_right = 88.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 70, 0 )
+size_flags_horizontal = 12
+custom_fonts/font = SubResource( 4 )
+custom_styles/hover = ExtResource( 10 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 8 )
+custom_styles/normal = ExtResource( 9 )
+text = "F/A"
+
+[node name="HealthArea" type="HBoxContainer" parent="inner/Content"]
+margin_top = 23.0
+margin_right = 180.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_constants/separation = 12
+
+[node name="health" type="Label" parent="inner/Content/HealthArea"]
+margin_right = 60.0
+margin_bottom = 19.0
+mouse_filter = 1
+size_flags_horizontal = 5
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "HP: 12/30"
+
+[node name="healthBar" type="ProgressBar" parent="inner/Content/HealthArea"]
+margin_left = 72.0
+margin_top = 7.0
+margin_right = 180.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 0, 5 )
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_styles/fg = SubResource( 2 )
+value = 50.0
+percent_visible = false
+
+[node name="CreatureImage" type="MarginContainer" parent="inner/Content"]
+margin_top = 46.0
+margin_right = 180.0
+margin_bottom = 149.0
+mouse_filter = 1
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="inner/Content/CreatureImage"]
+margin_right = 180.0
+margin_bottom = 103.0
+mouse_filter = 1
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 1 )
+
+[node name="Creature2DSprite" parent="inner/Content/CreatureImage" instance=ExtResource( 3 )]
+position = Vector2( 99, 57 )
+
+[connection signal="pressed" from="." to="." method="_on_Creature_pressed"]
+[connection signal="pressed" from="inner/Content/NameArea/activity/Leader" to="." method="_on_Leader_pressed"]
+[connection signal="pressed" from="inner/Content/NameArea/activity/Selected" to="." method="_on_Selected_pressed"]
+[connection signal="pressed" from="inner/Content/NameArea/activity/Status" to="." method="_on_Status_pressed"]

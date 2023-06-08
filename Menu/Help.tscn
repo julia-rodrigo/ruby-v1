@@ -1,0 +1,1707 @@
+[gd_scene load_steps=36 format=2]
+
+[ext_resource path="res://Menu/Help.gd" type="Script" id=3]
+[ext_resource path="res://import/googleFonts/Poppins/Poppins-Medium.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Interactions/ButtonStyles/disabledButton.tres" type="StyleBox" id=5]
+[ext_resource path="res://Interactions/ButtonStyles/DefaultButton.tres" type="StyleBox" id=6]
+[ext_resource path="res://Interactions/ButtonStyles/PressedButton.tres" type="StyleBox" id=7]
+[ext_resource path="res://Interactions/ButtonStyles/HoverButton.tres" type="StyleBox" id=8]
+[ext_resource path="res://Interactions/ButtonStyles/yellowtextboxStyle/DeafultYellowTextBox.tres" type="StyleBox" id=9]
+[ext_resource path="res://import/googleFonts/Poppins/Poppins-Regular.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Interactions/ButtonStyles/panelStyles/InnerPanel.tres" type="StyleBox" id=11]
+[ext_resource path="res://Menu/CreaturesPanel.gd" type="Script" id=12]
+[ext_resource path="res://Resource/Random/Creatures2DSprites/Creature2DSprite.tscn" type="PackedScene" id=13]
+[ext_resource path="res://import/items/big_apple.png" type="Texture" id=16]
+[ext_resource path="res://Menu/BagPanel.gd" type="Script" id=17]
+[ext_resource path="res://Menu/Bag/ItemList.gd" type="Script" id=18]
+[ext_resource path="res://Menu/Bag/CreaturePanelDraggable.gd" type="Script" id=20]
+[ext_resource path="res://Menu/Bag/CreaturesList.gd" type="Script" id=21]
+[ext_resource path="res://Menu/Bag/Description.gd" type="Script" id=22]
+[ext_resource path="res://Menu/Creature_Option/CreatureNameButtonsList.gd" type="Script" id=23]
+[ext_resource path="res://Menu/Creature_Option/scripts/FullCreaturInformation.gd" type="Script" id=24]
+[ext_resource path="res://Menu/Creature_Option/scripts/AttackList.gd" type="Script" id=25]
+[ext_resource path="res://Menu/Menu_Panel/MenuPanel.gd" type="Script" id=26]
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.601563, 0.386365, 0.192688, 0.580392 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.87451, 0.823529, 0.266667, 1 )
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.760784, 0.572549, 0.0117647, 1 )
+corner_radius_top_left = 9
+corner_radius_top_right = 9
+corner_radius_bottom_right = 9
+corner_radius_bottom_left = 9
+
+[sub_resource type="DynamicFont" id=13]
+size = 20
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=15]
+size = 23
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 18
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=25]
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=23]
+size = 13
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0, 1, 0.717647, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.290064, 0.707031, 0.589299, 1 )
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 0.223529, 0.2, 0.2, 0.901961 )
+
+[sub_resource type="DynamicFont" id=16]
+size = 18
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=26]
+size = 12
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=20]
+size = 17
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 18
+font_data = ExtResource( 4 )
+
+[node name="Help" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="Options" type="Control" parent="."]
+anchor_right = 1.0
+
+[node name="TopMarginContainer" type="MarginContainer" parent="Options"]
+anchor_right = 1.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_top = 20
+
+[node name="SideMarginContainer" type="MarginContainer" parent="Options/TopMarginContainer"]
+margin_top = 20.0
+margin_right = 1024.0
+margin_bottom = 62.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 60
+custom_constants/margin_left = 60
+
+[node name="ButtonOptions" type="HBoxContainer" parent="Options/TopMarginContainer/SideMarginContainer"]
+margin_left = 60.0
+margin_right = 964.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 15
+alignment = 1
+
+[node name="Button1" type="HBoxContainer" parent="Options/TopMarginContainer/SideMarginContainer/ButtonOptions"]
+margin_right = 168.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/TopMarginContainer/SideMarginContainer/ButtonOptions/Button1"]
+margin_right = 168.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BagButton" type="Button" parent="Options/TopMarginContainer/SideMarginContainer/ButtonOptions/Button1/MarginContainer"]
+margin_right = 168.0
+margin_bottom = 42.0
+focus_mode = 0
+custom_fonts/font = SubResource( 6 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
+text = "A: Bag"
+
+[node name="Button2" type="HBoxContainer" parent="Options/TopMarginContainer/SideMarginContainer/ButtonOptions"]
+margin_left = 183.0
+margin_right = 352.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/TopMarginContainer/SideMarginContainer/ButtonOptions/Button2"]
+margin_right = 169.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CreatureButton" type="Button" parent="Options/TopMarginContainer/SideMarginContainer/ButtonOptions/Button2/MarginContainer"]
+margin_right = 169.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 6 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = ExtResource( 6 )
+text = "S: Creatures"
+
+[node name="Button3" type="HBoxContainer" parent="Options/TopMarginContainer/SideMarginContainer/ButtonOptions"]
+margin_left = 367.0
+margin_right = 536.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/TopMarginContainer/SideMarginContainer/ButtonOptions/Button3"]
+margin_right = 169.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="SaveButton" type="Button" parent="Options/TopMarginContainer/SideMarginContainer/ButtonOptions/Button3/MarginContainer"]
+margin_right = 169.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 6 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
+text = "D: Save"
+
+[node name="Button5" type="HBoxContainer" parent="Options/TopMarginContainer/SideMarginContainer/ButtonOptions"]
+margin_left = 551.0
+margin_right = 720.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/TopMarginContainer/SideMarginContainer/ButtonOptions/Button5"]
+margin_right = 169.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MenuButton" type="Button" parent="Options/TopMarginContainer/SideMarginContainer/ButtonOptions/Button5/MarginContainer"]
+margin_right = 169.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 6 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
+text = "F: Menu"
+
+[node name="Button4" type="HBoxContainer" parent="Options/TopMarginContainer/SideMarginContainer/ButtonOptions"]
+margin_left = 735.0
+margin_right = 904.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/TopMarginContainer/SideMarginContainer/ButtonOptions/Button4"]
+margin_right = 169.0
+margin_bottom = 42.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="OptionsButton" type="Button" parent="Options/TopMarginContainer/SideMarginContainer/ButtonOptions/Button4/MarginContainer"]
+margin_right = 169.0
+margin_bottom = 42.0
+custom_fonts/font = SubResource( 6 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
+text = "G: Hide Options "
+
+[node name="SavingPanel" type="Panel" parent="Options"]
+visible = false
+margin_left = 343.0
+margin_top = 125.0
+margin_right = 701.0
+margin_bottom = 210.0
+custom_styles/panel = SubResource( 12 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/SavingPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 29.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="Options/SavingPanel/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 338.0
+margin_bottom = 94.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "Saved your position :)"
+autowrap = true
+
+[node name="TextBox" type="Panel" parent="Options"]
+visible = false
+margin_left = 367.0
+margin_top = 221.0
+margin_right = 782.0
+margin_bottom = 321.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 9 )
+
+[node name="MarginContainer" type="MarginContainer" parent="Options/TextBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="Options/TextBox/MarginContainer"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 395.0
+margin_bottom = 91.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "hey! xD You're not suppose to see me!!!"
+autowrap = true
+
+[node name="fillSizeFlags" type="MarginContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_bottom = 80.0
+mouse_filter = 2
+size_flags_horizontal = 7
+custom_constants/margin_right = 60
+custom_constants/margin_top = 80
+custom_constants/margin_left = 60
+
+[node name="marginBottomAndFillOnly" type="MarginContainer" parent="fillSizeFlags"]
+margin_left = 60.0
+margin_top = 80.0
+margin_right = 964.0
+margin_bottom = 680.0
+mouse_filter = 2
+custom_constants/margin_bottom = 600
+
+[node name="BagPanel" type="Panel" parent="fillSizeFlags/marginBottomAndFillOnly"]
+visible = false
+margin_right = 904.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 0, 300 )
+rect_clip_content = true
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 9 )
+script = ExtResource( 17 )
+
+[node name="outerMargin" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="innerVbox" type="VBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 884.0
+margin_bottom = 280.0
+custom_constants/separation = 15
+
+[node name="TopHbox" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox"]
+margin_right = 864.0
+margin_bottom = 40.0
+size_flags_horizontal = 7
+
+[node name="Label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/TopHbox"]
+margin_right = 225.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 225, 40 )
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "Bag [A]"
+
+[node name="Description" type="Panel" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/TopHbox"]
+margin_left = 229.0
+margin_right = 720.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 450, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 11 )
+script = ExtResource( 22 )
+
+[node name="info" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/TopHbox/Description"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "Drag food item onto your creature :)"
+align = 1
+valign = 1
+
+[node name="MoneyContainer" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/TopHbox"]
+margin_left = 724.0
+margin_right = 864.0
+margin_bottom = 40.0
+
+[node name="margin" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/TopHbox/MoneyContainer"]
+margin_right = 140.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 20
+
+[node name="money" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/TopHbox/MoneyContainer/margin"]
+margin_right = 120.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "200"
+align = 2
+valign = 1
+autowrap = true
+
+[node name="ContentMargin" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox"]
+margin_top = 55.0
+margin_right = 864.0
+margin_bottom = 260.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 8
+custom_constants/margin_left = 8
+
+[node name="SeparateMargin" type="VBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin"]
+margin_left = 8.0
+margin_right = 856.0
+margin_bottom = 205.0
+custom_constants/separation = 10
+
+[node name="Body" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin"]
+margin_right = 848.0
+margin_bottom = 169.0
+size_flags_vertical = 3
+
+[node name="ScrollLeft" type="ScrollContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body"]
+margin_right = 218.0
+margin_bottom = 169.0
+rect_min_size = Vector2( 218, 0 )
+size_flags_horizontal = 5
+size_flags_vertical = 3
+follow_focus = true
+scroll_horizontal_enabled = false
+
+[node name="ItemList" type="VBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollLeft"]
+custom_constants/separation = 4
+script = ExtResource( 18 )
+
+[node name="container" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollLeft/ItemList"]
+visible = false
+margin_right = 259.0
+margin_bottom = 40.0
+custom_constants/margin_right = 5
+
+[node name="item" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollLeft/ItemList/container"]
+margin_right = 254.0
+margin_bottom = 40.0
+
+[node name="name" type="Button" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollLeft/ItemList/container/item"]
+margin_right = 150.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 40 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 25 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
+text = "Apple"
+expand_icon = true
+
+[node name="details" type="Panel" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollLeft/ItemList/container/item"]
+margin_left = 154.0
+margin_right = 254.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 11 )
+
+[node name="info" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollLeft/ItemList/container/item/details"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "3"
+align = 1
+valign = 1
+
+[node name="AttackLine2" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollLeft/ItemList"]
+visible = false
+margin_right = 259.0
+margin_bottom = 40.0
+custom_constants/margin_right = 5
+
+[node name="Description" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollLeft/ItemList/AttackLine2"]
+margin_right = 254.0
+margin_bottom = 40.0
+
+[node name="Attack" type="Button" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollLeft/ItemList/AttackLine2/Description"]
+margin_right = 150.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 40 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 25 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
+text = "Attack1"
+expand_icon = true
+
+[node name="Stats" type="Panel" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollLeft/ItemList/AttackLine2/Description"]
+margin_left = 154.0
+margin_right = 254.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 11 )
+
+[node name="strength" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollLeft/ItemList/AttackLine2/Description/Stats"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "dmg: 10"
+align = 1
+valign = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body"]
+margin_left = 222.0
+margin_right = 848.0
+margin_bottom = 169.0
+size_flags_horizontal = 3
+follow_focus = true
+scroll_vertical_enabled = false
+
+[node name="CreaturesList" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollContainer"]
+margin_right = 626.0
+margin_bottom = 169.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 21 )
+
+[node name="Creature1" type="Panel" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollContainer/CreaturesList"]
+visible = false
+margin_right = 206.0
+margin_bottom = 169.0
+rect_min_size = Vector2( 206, 169 )
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 11 )
+
+[node name="inner" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollContainer/CreaturesList/Creature1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 13
+custom_constants/margin_top = 10
+custom_constants/margin_left = 13
+custom_constants/margin_bottom = 10
+
+[node name="Content" type="VBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollContainer/CreaturesList/Creature1/inner"]
+margin_left = 13.0
+margin_top = 10.0
+margin_right = 193.0
+margin_bottom = 159.0
+
+[node name="NameArea" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollContainer/CreaturesList/Creature1/inner/Content"]
+margin_right = 180.0
+margin_bottom = 19.0
+size_flags_vertical = 0
+custom_constants/separation = 12
+
+[node name="Label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollContainer/CreaturesList/Creature1/inner/Content/NameArea"]
+margin_right = 43.0
+margin_bottom = 19.0
+size_flags_horizontal = 5
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "Name:"
+
+[node name="name" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollContainer/CreaturesList/Creature1/inner/Content/NameArea"]
+margin_left = 55.0
+margin_right = 80.0
+margin_bottom = 19.0
+size_flags_horizontal = 5
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "Tihi"
+uppercase = true
+
+[node name="HealthArea" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollContainer/CreaturesList/Creature1/inner/Content"]
+margin_top = 23.0
+margin_right = 180.0
+margin_bottom = 42.0
+size_flags_vertical = 0
+custom_constants/separation = 12
+
+[node name="health" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollContainer/CreaturesList/Creature1/inner/Content/HealthArea"]
+margin_right = 60.0
+margin_bottom = 19.0
+size_flags_horizontal = 5
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "HP: 12/30"
+
+[node name="healthBar" type="ProgressBar" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollContainer/CreaturesList/Creature1/inner/Content/HealthArea"]
+margin_left = 72.0
+margin_top = 7.0
+margin_right = 180.0
+margin_bottom = 12.0
+rect_min_size = Vector2( 0, 5 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_styles/fg = SubResource( 17 )
+value = 50.0
+percent_visible = false
+
+[node name="CreatureImage" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollContainer/CreaturesList/Creature1/inner/Content"]
+margin_top = 46.0
+margin_right = 180.0
+margin_bottom = 149.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollContainer/CreaturesList/Creature1/inner/Content/CreatureImage"]
+margin_right = 180.0
+margin_bottom = 103.0
+custom_styles/panel = SubResource( 24 )
+script = ExtResource( 20 )
+
+[node name="Creature2DSprite" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ScrollContainer/CreaturesList/Creature1/inner/Content/CreatureImage" instance=ExtResource( 13 )]
+position = Vector2( 79, 55 )
+
+[node name="PlayerDizziness" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin"]
+margin_top = 179.0
+margin_right = 848.0
+margin_bottom = 205.0
+custom_constants/separation = 30
+alignment = 1
+
+[node name="Label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/PlayerDizziness"]
+margin_right = 84.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 16 )
+text = "Dizziness:"
+
+[node name="DizzinessBar" type="ProgressBar" parent="fillSizeFlags/marginBottomAndFillOnly/BagPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/PlayerDizziness"]
+margin_left = 114.0
+margin_top = 8.0
+margin_right = 848.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_styles/fg = SubResource( 17 )
+value = 50.0
+percent_visible = false
+
+[node name="CreaturesPanel" type="Panel" parent="fillSizeFlags/marginBottomAndFillOnly"]
+visible = false
+margin_right = 904.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 0, 300 )
+rect_clip_content = true
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 9 )
+script = ExtResource( 12 )
+
+[node name="outerMargin" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="innerVbox" type="VBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 884.0
+margin_bottom = 280.0
+custom_constants/separation = 15
+
+[node name="TopHbox" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox"]
+margin_right = 864.0
+margin_bottom = 40.0
+size_flags_horizontal = 7
+
+[node name="Label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/TopHbox"]
+margin_right = 225.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 225, 40 )
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "Creature [S]"
+
+[node name="Info" type="Panel" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/TopHbox"]
+margin_left = 229.0
+margin_right = 720.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 450, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 11 )
+
+[node name="about" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/TopHbox/Info"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "Learn more about your creatures!"
+align = 1
+valign = 1
+
+[node name="MoneyContainer" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/TopHbox"]
+margin_left = 724.0
+margin_right = 864.0
+margin_bottom = 40.0
+
+[node name="margin" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/TopHbox/MoneyContainer"]
+margin_right = 140.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 20
+
+[node name="money" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/TopHbox/MoneyContainer/margin"]
+margin_right = 120.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "200"
+align = 2
+valign = 1
+autowrap = true
+
+[node name="BigApple" type="Sprite" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/TopHbox"]
+position = Vector2( -180, 120 )
+texture = ExtResource( 16 )
+
+[node name="ContentMargin" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox"]
+margin_top = 55.0
+margin_right = 864.0
+margin_bottom = 260.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 8
+custom_constants/margin_left = 8
+
+[node name="SeparateMargin" type="VBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin"]
+margin_left = 8.0
+margin_right = 856.0
+margin_bottom = 205.0
+custom_constants/separation = 10
+
+[node name="Body" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin"]
+margin_right = 848.0
+margin_bottom = 169.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="scroll" type="ScrollContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body"]
+margin_right = 218.0
+margin_bottom = 169.0
+rect_min_size = Vector2( 218, 0 )
+size_flags_horizontal = 5
+size_flags_vertical = 3
+follow_focus = true
+scroll_horizontal_enabled = false
+
+[node name="AttackList" type="VBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/scroll"]
+custom_constants/separation = 4
+script = ExtResource( 25 )
+
+[node name="AttackLine" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/scroll/AttackList"]
+visible = false
+margin_right = 259.0
+margin_bottom = 40.0
+custom_constants/margin_right = 5
+
+[node name="Description" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/scroll/AttackList/AttackLine"]
+margin_right = 254.0
+margin_bottom = 40.0
+
+[node name="Attack" type="Button" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/scroll/AttackList/AttackLine/Description"]
+margin_right = 150.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 40 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 25 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
+text = "Attack1"
+expand_icon = true
+
+[node name="Stats" type="Panel" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/scroll/AttackList/AttackLine/Description"]
+margin_left = 154.0
+margin_right = 254.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 11 )
+
+[node name="strength" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/scroll/AttackList/AttackLine/Description/Stats"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "dmg: 10"
+align = 1
+valign = 1
+
+[node name="AttackLine2" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/scroll/AttackList"]
+visible = false
+margin_right = 259.0
+margin_bottom = 40.0
+custom_constants/margin_right = 5
+
+[node name="Description" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/scroll/AttackList/AttackLine2"]
+margin_right = 254.0
+margin_bottom = 40.0
+
+[node name="Attack" type="Button" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/scroll/AttackList/AttackLine2/Description"]
+margin_right = 150.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 150, 40 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 25 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
+text = "Attack1"
+expand_icon = true
+
+[node name="Stats" type="Panel" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/scroll/AttackList/AttackLine2/Description"]
+margin_left = 154.0
+margin_right = 254.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 100, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 11 )
+
+[node name="strength" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/scroll/AttackList/AttackLine2/Description/Stats"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "dmg: 10"
+align = 1
+valign = 1
+
+[node name="creature" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body"]
+margin_left = 222.0
+margin_right = 674.0
+margin_bottom = 169.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource( 24 )
+
+[node name="CreatureScreen" type="Panel" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature"]
+margin_right = 224.0
+margin_bottom = 169.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 11 )
+
+[node name="inner" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 13
+custom_constants/margin_top = 10
+custom_constants/margin_left = 13
+custom_constants/margin_bottom = 10
+
+[node name="Content" type="VBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureScreen/inner"]
+margin_left = 13.0
+margin_top = 10.0
+margin_right = 211.0
+margin_bottom = 159.0
+
+[node name="CreatureImage" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureScreen/inner/Content"]
+margin_right = 198.0
+margin_bottom = 149.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Screen" type="Panel" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureScreen/inner/Content/CreatureImage"]
+margin_right = 198.0
+margin_bottom = 149.0
+custom_styles/panel = SubResource( 24 )
+
+[node name="Creature2DSprite" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureScreen/inner/Content/CreatureImage" instance=ExtResource( 13 )]
+position = Vector2( 113, 108 )
+
+[node name="CreatureFullStats" type="Panel" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature"]
+margin_left = 228.0
+margin_right = 452.0
+margin_bottom = 169.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 11 )
+
+[node name="OuterMargin" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 20
+custom_constants/margin_top = 15
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 15
+
+[node name="ScrollContainer" type="ScrollContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin"]
+margin_left = 20.0
+margin_top = 15.0
+margin_right = 204.0
+margin_bottom = 154.0
+
+[node name="List" type="VBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer"]
+margin_right = 220.0
+margin_bottom = 236.0
+rect_min_size = Vector2( 220, 0 )
+
+[node name="NameArea" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List"]
+margin_right = 220.0
+margin_bottom = 19.0
+size_flags_vertical = 0
+custom_constants/separation = 12
+
+[node name="Label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/NameArea"]
+margin_right = 104.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "Name:"
+
+[node name="name" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/NameArea"]
+margin_left = 116.0
+margin_right = 220.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "Grima"
+uppercase = true
+
+[node name="CreatureArea" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List"]
+margin_top = 23.0
+margin_right = 220.0
+margin_bottom = 42.0
+size_flags_vertical = 0
+custom_constants/separation = 12
+
+[node name="Label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/CreatureArea"]
+margin_right = 104.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "Creature:"
+
+[node name="creature" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/CreatureArea"]
+margin_left = 116.0
+margin_right = 220.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "Tihi"
+uppercase = true
+
+[node name="LevelArea" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List"]
+margin_top = 46.0
+margin_right = 220.0
+margin_bottom = 65.0
+size_flags_vertical = 0
+custom_constants/separation = 12
+
+[node name="Label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/LevelArea"]
+margin_right = 104.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "Level:"
+
+[node name="level" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/LevelArea"]
+margin_left = 116.0
+margin_right = 220.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "3"
+
+[node name="DamageArea" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List"]
+margin_top = 69.0
+margin_right = 220.0
+margin_bottom = 88.0
+size_flags_vertical = 0
+custom_constants/separation = 12
+
+[node name="Label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/DamageArea"]
+margin_right = 104.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "Damage:"
+
+[node name="damage" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/DamageArea"]
+margin_left = 116.0
+margin_right = 220.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "3"
+
+[node name="DefenceArea" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List"]
+margin_top = 92.0
+margin_right = 220.0
+margin_bottom = 111.0
+size_flags_vertical = 0
+custom_constants/separation = 12
+
+[node name="Label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/DefenceArea"]
+margin_right = 104.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "Defence:"
+
+[node name="defence" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/DefenceArea"]
+margin_left = 116.0
+margin_right = 220.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "2"
+
+[node name="TamerArea" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List"]
+margin_top = 115.0
+margin_right = 220.0
+margin_bottom = 134.0
+size_flags_vertical = 0
+custom_constants/separation = 12
+
+[node name="Label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/TamerArea"]
+margin_right = 104.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "Tamer:"
+
+[node name="tamer" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/TamerArea"]
+margin_left = 116.0
+margin_right = 220.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "Ruby"
+uppercase = true
+
+[node name="FoundArea" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List"]
+margin_top = 138.0
+margin_right = 220.0
+margin_bottom = 157.0
+size_flags_vertical = 0
+custom_constants/separation = 12
+
+[node name="Label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/FoundArea"]
+margin_right = 104.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "Found:"
+
+[node name="found" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/FoundArea"]
+margin_left = 116.0
+margin_right = 220.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "wORLD"
+uppercase = true
+
+[node name="InitialArea" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List"]
+margin_top = 161.0
+margin_right = 220.0
+margin_bottom = 180.0
+size_flags_vertical = 0
+custom_constants/separation = 12
+
+[node name="Label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/InitialArea"]
+margin_right = 104.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "Initial Lv:"
+
+[node name="initial" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/InitialArea"]
+margin_left = 116.0
+margin_right = 220.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "3"
+uppercase = true
+
+[node name="TypeArea" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List"]
+margin_top = 184.0
+margin_right = 220.0
+margin_bottom = 203.0
+size_flags_vertical = 0
+custom_constants/separation = 12
+
+[node name="Label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/TypeArea"]
+margin_right = 104.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "Type:"
+
+[node name="type" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/TypeArea"]
+margin_left = 116.0
+margin_right = 220.0
+margin_bottom = 19.0
+size_flags_horizontal = 7
+size_flags_vertical = 0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 23 )
+text = "Fox with a hat"
+
+[node name="Space" type="Control" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List"]
+margin_top = 207.0
+margin_right = 220.0
+margin_bottom = 207.0
+
+[node name="UserInput" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List"]
+margin_top = 211.0
+margin_right = 220.0
+margin_bottom = 236.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Rename" type="Button" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/UserInput"]
+margin_right = 108.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 70, 25 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 26 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
+text = "Rename"
+
+[node name="Release" type="Button" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/UserInput"]
+margin_left = 112.0
+margin_right = 220.0
+margin_bottom = 25.0
+rect_min_size = Vector2( 75, 25 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 26 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
+text = "Release"
+
+[node name="allNames" type="ScrollContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body"]
+margin_left = 678.0
+margin_right = 848.0
+margin_bottom = 169.0
+rect_min_size = Vector2( 170, 0 )
+follow_focus = true
+scroll_horizontal_enabled = false
+
+[node name="list" type="VBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/allNames"]
+custom_constants/separation = 4
+script = ExtResource( 23 )
+
+[node name="creature1" type="Button" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/allNames/list"]
+visible = false
+margin_right = 160.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 160, 40 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 25 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
+text = "Creature.name"
+expand_icon = true
+
+[node name="creature2" type="Button" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/allNames/list"]
+visible = false
+margin_right = 160.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 160, 40 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 25 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
+text = "Creature.name"
+expand_icon = true
+
+[node name="creature3" type="Button" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/allNames/list"]
+visible = false
+margin_right = 160.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 160, 40 )
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 25 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
+text = "Creature.name"
+expand_icon = true
+
+[node name="CreatureProgress" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin"]
+margin_top = 179.0
+margin_right = 848.0
+margin_bottom = 205.0
+size_flags_vertical = 0
+custom_constants/separation = 50
+
+[node name="HealthArea" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/CreatureProgress"]
+margin_right = 399.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/CreatureProgress/HealthArea"]
+margin_right = 89.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 16 )
+text = "HP: 30/100"
+
+[node name="HealthProgressBar" type="ProgressBar" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/CreatureProgress/HealthArea"]
+margin_left = 104.0
+margin_top = 8.0
+margin_right = 399.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_styles/fg = SubResource( 17 )
+value = 50.0
+percent_visible = false
+
+[node name="EXPArea" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/CreatureProgress"]
+margin_left = 449.0
+margin_right = 848.0
+margin_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/CreatureProgress/EXPArea"]
+margin_right = 93.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 16 )
+text = "EXP: 30/40"
+
+[node name="ExperienceProgressBar" type="ProgressBar" parent="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/CreatureProgress/EXPArea"]
+margin_left = 108.0
+margin_top = 8.0
+margin_right = 399.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_styles/fg = SubResource( 17 )
+value = 50.0
+percent_visible = false
+
+[node name="MenuPanel" type="Panel" parent="fillSizeFlags/marginBottomAndFillOnly"]
+visible = false
+margin_right = 904.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 0, 300 )
+rect_clip_content = true
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 9 )
+script = ExtResource( 26 )
+
+[node name="outerMargin" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 20
+custom_constants/margin_top = 20
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 20
+
+[node name="innerVbox" type="VBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 884.0
+margin_bottom = 280.0
+custom_constants/separation = 15
+
+[node name="TopHbox" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox"]
+margin_right = 864.0
+margin_bottom = 40.0
+size_flags_horizontal = 7
+
+[node name="Label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/TopHbox"]
+margin_right = 225.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 225, 40 )
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "Menu [F]"
+
+[node name="Quest" type="Panel" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/TopHbox"]
+margin_left = 229.0
+margin_right = 720.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 450, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 11 )
+
+[node name="contain" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/TopHbox/Quest"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="title" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/TopHbox/Quest/contain"]
+margin_right = 180.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 180, 0 )
+size_flags_horizontal = 0
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "Quest: "
+align = 1
+valign = 1
+
+[node name="subtitle" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/TopHbox/Quest/contain"]
+margin_left = 184.0
+margin_right = 491.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "\"Let's explore\""
+align = 1
+valign = 1
+
+[node name="MoneyContainer" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/TopHbox"]
+margin_left = 724.0
+margin_right = 864.0
+margin_bottom = 40.0
+
+[node name="margin" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/TopHbox/MoneyContainer"]
+margin_right = 140.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 20
+
+[node name="money" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/TopHbox/MoneyContainer/margin"]
+margin_right = 120.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 15 )
+text = "200"
+align = 2
+valign = 1
+autowrap = true
+
+[node name="ContentMargin" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox"]
+margin_top = 55.0
+margin_right = 864.0
+margin_bottom = 260.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 8
+custom_constants/margin_left = 8
+
+[node name="SeparateMargin" type="VBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin"]
+margin_left = 8.0
+margin_right = 856.0
+margin_bottom = 205.0
+custom_constants/separation = 10
+
+[node name="Body" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin"]
+margin_right = 848.0
+margin_bottom = 169.0
+size_flags_vertical = 3
+
+[node name="ProgressOptions" type="ScrollContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body"]
+margin_right = 250.0
+margin_bottom = 169.0
+rect_min_size = Vector2( 250, 0 )
+size_flags_horizontal = 5
+size_flags_vertical = 3
+follow_focus = true
+scroll_horizontal_enabled = false
+
+[node name="List" type="VBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ProgressOptions"]
+margin_right = 250.0
+margin_bottom = 216.0
+rect_min_size = Vector2( 238, 216 )
+size_flags_horizontal = 3
+custom_constants/separation = 4
+
+[node name="Save" type="Button" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ProgressOptions/List"]
+margin_right = 238.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 40 )
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 25 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
+text = "Save"
+
+[node name="Load" type="Button" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ProgressOptions/List"]
+margin_top = 44.0
+margin_right = 238.0
+margin_bottom = 84.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 25 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
+text = "Load File"
+
+[node name="Preload" type="Button" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ProgressOptions/List"]
+margin_top = 88.0
+margin_right = 238.0
+margin_bottom = 128.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 25 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
+text = "Preload to Previous Sign"
+
+[node name="Settings" type="Button" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ProgressOptions/List"]
+margin_top = 132.0
+margin_right = 238.0
+margin_bottom = 172.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 25 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
+text = "Settings"
+
+[node name="Title" type="Button" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/ProgressOptions/List"]
+margin_top = 176.0
+margin_right = 238.0
+margin_bottom = 216.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_vertical = 0
+custom_fonts/font = SubResource( 25 )
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 7 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 6 )
+text = "Go to Tile SCREEN"
+
+[node name="QuestContainer" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body"]
+margin_left = 254.0
+margin_right = 848.0
+margin_bottom = 169.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 10
+custom_constants/margin_left = 10
+
+[node name="Scroll" type="ScrollContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/QuestContainer"]
+margin_left = 10.0
+margin_right = 584.0
+margin_bottom = 169.0
+size_flags_horizontal = 7
+size_flags_vertical = 3
+follow_focus = true
+scroll_horizontal_enabled = false
+
+[node name="list" type="VBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/QuestContainer/Scroll"]
+margin_right = 574.0
+margin_bottom = 169.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="requirement" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/QuestContainer/Scroll/list"]
+margin_right = 574.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+
+[node name="line" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/QuestContainer/Scroll/list/requirement"]
+margin_right = 140.0
+margin_bottom = 40.0
+
+[node name="spacing" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/QuestContainer/Scroll/list/requirement/line"]
+margin_right = 140.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 20
+
+[node name="label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/QuestContainer/Scroll/list/requirement/line/spacing"]
+margin_right = 120.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 120, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+text = "Require: "
+valign = 1
+autowrap = true
+
+[node name="ProgressResult" type="Panel" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/QuestContainer/Scroll/list/requirement"]
+margin_left = 144.0
+margin_right = 344.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 200, 40 )
+custom_styles/panel = ExtResource( 11 )
+
+[node name="content" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/QuestContainer/Scroll/list/requirement/ProgressResult"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_right = -20.0
+custom_constants/separation = 10
+
+[node name="require" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/QuestContainer/Scroll/list/requirement/ProgressResult/content"]
+margin_right = 110.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "Nothing yet!"
+align = 1
+valign = 1
+
+[node name="amount" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/QuestContainer/Scroll/list/requirement/ProgressResult/content"]
+margin_left = 120.0
+margin_right = 170.0
+margin_bottom = 40.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 18 )
+text = "-3-"
+align = 2
+valign = 1
+
+[node name="information" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/QuestContainer/Scroll/list"]
+margin_top = 44.0
+margin_right = 574.0
+margin_bottom = 169.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="spaces" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/QuestContainer/Scroll/list/information"]
+margin_right = 140.0
+margin_bottom = 125.0
+
+[node name="container" type="MarginContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/QuestContainer/Scroll/list/information/spaces"]
+margin_right = 140.0
+margin_bottom = 125.0
+size_flags_horizontal = 3
+custom_constants/margin_right = 20
+
+[node name="Label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/QuestContainer/Scroll/list/information/spaces/container"]
+margin_right = 120.0
+margin_bottom = 125.0
+rect_min_size = Vector2( 120, 40 )
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 20 )
+text = "Info:"
+autowrap = true
+
+[node name="informationPanel" type="Panel" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/QuestContainer/Scroll/list/information"]
+margin_left = 144.0
+margin_right = 574.0
+margin_bottom = 125.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = ExtResource( 11 )
+
+[node name="questInfo" type="RichTextLabel" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/QuestContainer/Scroll/list/information/informationPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+custom_fonts/normal_font = SubResource( 21 )
+text = "Let's try talking to everyone in the village. You might even find something interesting :)"
+scroll_active = false
+
+[node name="PlayerProgress" type="HBoxContainer" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin"]
+margin_top = 179.0
+margin_right = 848.0
+margin_bottom = 205.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+custom_constants/separation = 15
+alignment = 1
+
+[node name="Label" type="Label" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/PlayerProgress"]
+margin_right = 154.0
+margin_bottom = 26.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 16 )
+text = "Ruby's Adventure"
+
+[node name="PlayerProgressBar" type="ProgressBar" parent="fillSizeFlags/marginBottomAndFillOnly/MenuPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/PlayerProgress"]
+margin_left = 169.0
+margin_top = 8.0
+margin_right = 848.0
+margin_bottom = 18.0
+rect_min_size = Vector2( 0, 10 )
+size_flags_horizontal = 3
+size_flags_vertical = 4
+custom_styles/fg = SubResource( 17 )
+value = 50.0
+percent_visible = false
+
+[connection signal="pressed" from="Options/TopMarginContainer/SideMarginContainer/ButtonOptions/Button1/MarginContainer/BagButton" to="." method="_on_BagButton_pressed"]
+[connection signal="pressed" from="Options/TopMarginContainer/SideMarginContainer/ButtonOptions/Button2/MarginContainer/CreatureButton" to="." method="_on_CreatureButton_pressed"]
+[connection signal="pressed" from="Options/TopMarginContainer/SideMarginContainer/ButtonOptions/Button3/MarginContainer/SaveButton" to="." method="_on_SaveButton_pressed"]
+[connection signal="pressed" from="Options/TopMarginContainer/SideMarginContainer/ButtonOptions/Button5/MarginContainer/MenuButton" to="." method="_on_MenuButton_pressed"]
+[connection signal="pressed" from="Options/TopMarginContainer/SideMarginContainer/ButtonOptions/Button4/MarginContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="visibility_changed" from="fillSizeFlags/marginBottomAndFillOnly/BagPanel" to="fillSizeFlags/marginBottomAndFillOnly/BagPanel" method="_on_BagPanel_visibility_changed"]
+[connection signal="visibility_changed" from="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel" to="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel" method="_on_CreaturesPanel_visibility_changed"]
+[connection signal="pressed" from="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/UserInput/Rename" to="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature" method="_on_Rename_pressed"]
+[connection signal="pressed" from="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature/CreatureFullStats/OuterMargin/ScrollContainer/List/UserInput/Release" to="fillSizeFlags/marginBottomAndFillOnly/CreaturesPanel/outerMargin/innerVbox/ContentMargin/SeparateMargin/Body/creature" method="_on_Release_pressed"]

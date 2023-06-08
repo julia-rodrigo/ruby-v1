@@ -1,0 +1,14 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Resource/Random/Creatures/Feet_cat.tres" type="Resource" id=1]
+[ext_resource path="res://Resource/Random/Creatures/hasven_goose.tres" type="Resource" id=2]
+[ext_resource path="res://Resource/Random/RandomFinder.gd" type="Script" id=3]
+[ext_resource path="res://Resource/Random/ChanceBasedScenes/Scene.gd" type="Script" id=4]
+[ext_resource path="res://Resource/Random/Creatures/Tihi_fox.tres" type="Resource" id=5]
+
+[node name="Scene" type="Node"]
+script = ExtResource( 4 )
+
+[node name="RandomFinder" type="Node" parent="."]
+script = ExtResource( 3 )
+creature_list = [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 5 ) ]

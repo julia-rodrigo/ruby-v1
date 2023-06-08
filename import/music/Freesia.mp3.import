@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Freesia.mp3-1516a83f5af57ae4e8590c96afde94d1.mp3str"
+
+[deps]
+
+source_file="res://import/music/Freesia.mp3"
+dest_files=[ "res://.import/Freesia.mp3-1516a83f5af57ae4e8590c96afde94d1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

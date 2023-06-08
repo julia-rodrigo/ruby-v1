@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://World/GameIntro.gd" type="Script" id=1]
+
+[node name="GameIntro" type="Spatial"]
+script = ExtResource( 1 )
+who_says = "Ruby"
+message = [ ":)))", "I wonder what I should do today!", "I hope Grandma is doing well though", "Maybe I should visit her?", "But ...nevermind I can start of as usual!", "Exploring!!" ]

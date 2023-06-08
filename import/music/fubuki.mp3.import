@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fubuki.mp3-d806bd8f2c96a8ae4b3b26a40f382b0e.mp3str"
+
+[deps]
+
+source_file="res://import/music/fubuki.mp3"
+dest_files=[ "res://.import/fubuki.mp3-d806bd8f2c96a8ae4b3b26a40f382b0e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

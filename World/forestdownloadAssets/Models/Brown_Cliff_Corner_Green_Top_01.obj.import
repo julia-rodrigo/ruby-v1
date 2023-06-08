@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Brown_Cliff_Corner_Green_Top_01.obj-26636d6b609e54a7abe928df53a5046c.mesh"
+
+[deps]
+
+files=[ "res://.import/Brown_Cliff_Corner_Green_Top_01.obj-26636d6b609e54a7abe928df53a5046c.mesh" ]
+
+source_file="res://World/forestdownloadAssets/Models/Brown_Cliff_Corner_Green_Top_01.obj"
+dest_files=[ "res://.import/Brown_Cliff_Corner_Green_Top_01.obj-26636d6b609e54a7abe928df53a5046c.mesh", "res://.import/Brown_Cliff_Corner_Green_Top_01.obj-26636d6b609e54a7abe928df53a5046c.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

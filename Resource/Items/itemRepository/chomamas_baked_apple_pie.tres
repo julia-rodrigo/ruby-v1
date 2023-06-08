@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Resource/Items/ItemClass/QuestItem.gd" type="Script" id=1]
+[ext_resource path="res://import/items/little_apple.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Chomama Apple Pie"
+amount = 1
+little_texture = ExtResource( 2 )
+description = "YOO CHOMAMA IS THE BEST BAKER... but... its for Grandma.. :("
+hover_text = "Chomama chomamama chotto matte chotto!"
+chance = 0
+held_by = [  ]
+stackable = false
+max_stack_size = 1
+type = 2
+food = false
+quest_id = 1
+give_to = "Grandma"
+after_given_message = [ "Darn darling", "Hold on a sec while I whip you up the best apple pie there is in history", "Aaaand", "xD surprised that I made it quick?", "xD it's a secret", "Now kiddo", "Fight grandma >:) :heart:" ]

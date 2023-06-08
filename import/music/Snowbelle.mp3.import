@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Snowbelle.mp3-ee197fd9734ef9e6322a4796d5e322d8.mp3str"
+
+[deps]
+
+source_file="res://import/music/Snowbelle.mp3"
+dest_files=[ "res://.import/Snowbelle.mp3-ee197fd9734ef9e6322a4796d5e322d8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,23 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Resource/Random/RandomCreature.gd" type="Script" id=1]
+[ext_resource path="res://creatures/Tihi.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Resource/Items/itemRepository/apple.tres" type="Resource" id=3]
+
+[resource]
+script = ExtResource( 1 )
+name = "Hasven"
+sprite = ExtResource( 2 )
+health = 15
+current_health = 15
+experience = 10
+current_experience = 1
+damage = 12
+defence = 6
+level = 4
+description = "Hasven's often fly to unknown areas to gain new bow ideas."
+ENCOUNTER_CHANCE = 6
+can_be_found = true
+type = "Unknown Goose"
+item = ExtResource( 3 )
+held_item = [ ExtResource( 3 ) ]

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://import/items/small_apple.png" type="Texture" id=1]
+
+[node name="AppleSpriteControlNode" type="Control"]
+margin_right = 28.0
+margin_bottom = 28.0
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 14, 14 )
+texture = ExtResource( 1 )

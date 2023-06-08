@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Resource/Adventures/AdventureClasses/ItemAdventure.gd" type="Script" id=1]
+[ext_resource path="res://Resource/Items/itemRepository/chomamas_baked_apple_pie.tres" type="Resource" id=2]
+[ext_resource path="res://Resource/Items/itemRepository/apple.tres" type="Resource" id=3]
+
+[resource]
+script = ExtResource( 1 )
+name = "Grandma's Apple Pie"
+description = "If you could get me 20 Apples dropped from monsters battles in the tiny field, I could whip up something to get on the chief's good side. What do you say? xD"
+reward = [ ExtResource( 2 ) ]
+post_quest_message = [ "Darn darling", "Hold on a sec while I whip you up the best apple pie there is in history", "Aaaand", "xD surprised that I made it quick?", "it's a secret~", "Now kiddo", "go fight your grandma >:) :heart:" ]
+post_talk_to_me = ":)"
+next_quest_hint = "With grandma's pie, now we can appologise to her in the deeper woods."
+quest_id = 1
+amount_to_collect = 20
+item_needed = ExtResource( 3 )

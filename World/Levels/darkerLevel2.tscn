@@ -1,0 +1,239 @@
+[gd_scene load_steps=21 format=2]
+
+[ext_resource path="res://World/BattleUI/ScaledLevels/Level2Scaled.tscn" type="PackedScene" id=1]
+[ext_resource path="res://player/Ruby.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/Transitions/Levels.gd" type="Script" id=3]
+[ext_resource path="res://World/Entrance.tscn" type="PackedScene" id=4]
+[ext_resource path="res://World/BattleUI/Grass/DarkGrass.tscn" type="PackedScene" id=5]
+[ext_resource path="res://World/BattleUI/Grass/LightGrass.tscn" type="PackedScene" id=6]
+[ext_resource path="res://World/camera/InterpolatedCamera.gd" type="Script" id=7]
+[ext_resource path="res://Resource/Random/Creatures/Tihi_fox.tres" type="Resource" id=8]
+[ext_resource path="res://Resource/Random/Creatures/Feet_cat.tres" type="Resource" id=9]
+[ext_resource path="res://Resource/Random/Creatures/hasven_goose.tres" type="Resource" id=10]
+[ext_resource path="res://ForestObjects/Destination Sign.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Resource/Items/itemRepository/golden_apple.tres" type="Resource" id=12]
+[ext_resource path="res://Resource/NPC/GAME_NPC/Rin.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Resource/NPC/GAME_NPC/CREATURE_NPC/NPC_Creature.tscn" type="PackedScene" id=14]
+[ext_resource path="res://GameIntro.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Resource/Adventures/Adventure/oh_no.tres" type="Resource" id=16]
+[ext_resource path="res://import/music/Octopath.mp3" type="AudioStream" id=17]
+
+[sub_resource type="Animation" id=1]
+resource_name = "encounterZoomIn"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:target")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 1,
+"values": [  ]
+}
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 7.69179, 1.78617, 7.30531 )
+
+[sub_resource type="CubeMesh" id=3]
+size = Vector3( 30.5, 2, 23 )
+
+[node name="darkerLevel2" type="Spatial"]
+script = ExtResource( 3 )
+creatures_array = [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 9 ) ]
+
+[node name="GameEnding" parent="." instance=ExtResource( 15 )]
+message = [ ":)))", "Woah! that was fun!!", "I guess Grandma forgive me for now", "Let's go have Chomama's apple pie!", "Thank you for accompanying me today!" ]
+appear_on_quest = 4
+
+[node name="NPC" type="Spatial" parent="."]
+
+[node name="Grandma" parent="NPC" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31673, 0.446449, 11.7091 )
+collision_layer = 1
+character_name = "Grandma"
+message = [ "Ruby", "My darling grandchild", "Somebody was here earlier on", "And guess what they did....", "They", "FUCKING", "STOLE", "MY", "FUKIN", "PRIZE GOLDEN APPLES!!!!!!!" ]
+after_quest = [ "Ruby..", "Is that...", "Chomama's Apple Pie?!?!!?", ".....", ":0000000", "T.T", "Oh Chomama....", "Here me out Ruby!!!!", "IT WAS HORRIBLE", "But...", "Now that we have one of the best apple pie in the world", "Let's celebrate with the village :)))", "Thank you Dearest" ]
+talk_to_me = "Ruby..."
+stay_still = true
+battle_ready = true
+tamer_team = [ ExtResource( 8 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 9 ) ]
+quest = ExtResource( 16 )
+
+[node name="I Love Autumn" parent="NPC" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.26914, 0.481224, 0.343575 )
+collision_layer = 1
+character_name = "The Autumn Guy"
+message = [ "The grass here is so nice right!!", "It's funny how the vilage is all covered in snow, but here is still in autumn", "Being a game developer is as hard as controlling the weather!!", "Hhaah here, my HASVEN found a Golden Apple. It looks like you could too. Just hit the 'E' keys. ;D cool hack right? youlld need it", "Just, try not to get on the Chief's bad side like yesterday 'kay?" ]
+after_quest = [ "Just try to not get on the chief's bad side yeah?" ]
+talk_to_me = "So refreshing here :)"
+held_item = ExtResource( 12 )
+
+[node name="Artist" parent="NPC" instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85368, 0.40448, 0.42955 )
+collision_layer = 1
+character_name = "Appreciating Artist"
+message = [ "Ah the trees", "Look at the colours", "But if I were to choose a texture, hmmm it definitely wont be this", "I prefer more ... hmm refined looking trees perhaps", "What do you think missy?", "Oh your Tihi is really cute", "Did you know that you could swich creature leader on the Bag menu?", "Select a creature and then select the select button", "The leader is always first unless it fainted", "Just give them an Apple and they will be all find", "Aa, apples are truly the national fruit of the village", ":)" ]
+talk_to_me = "The godot wood looks...hmm"
+stay_still = true
+
+[node name="Hasven" parent="NPC" instance=ExtResource( 14 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9725, 0.270756, 8.61221 )
+character_name = "A Wandering Hasven"
+message = [ ":))))", "hshshhhsh", "wwwww" ]
+talk_to_me = "xD"
+battle_mode = true
+creature = ExtResource( 10 )
+
+[node name="ConnectedWorlds" type="Spatial" parent="."]
+
+[node name="World" parent="ConnectedWorlds" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2691, 0, 10.0015 )
+
+[node name="WorldPos" type="Position3D" parent="ConnectedWorlds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21311, 0.302661, 11.1403 )
+
+[node name="tinyLevel1Pos" type="Position3D" parent="ConnectedWorlds"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.720323, 0.302661, -2.87796 )
+
+[node name="tinyLevel1" parent="ConnectedWorlds" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.21234, 0.435211, -6.40081 )
+
+[node name="Level2Scaled" parent="." instance=ExtResource( 1 )]
+
+[node name="Grass8" parent="Level2Scaled" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80151, 0.425235, 1.86138 )
+
+[node name="DarkGrass2" parent="Level2Scaled" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.47018, 0.452237, 3.93535 )
+
+[node name="DarkGrass3" parent="Level2Scaled" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.34861, 0.452237, 5.88059 )
+
+[node name="DarkGrass4" parent="Level2Scaled" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.59234, 0.452237, -3.25965 )
+
+[node name="DarkGrass5" parent="Level2Scaled" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.59234, 0.452237, -1.42325 )
+
+[node name="DarkGrass6" parent="Level2Scaled" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.36737, 0.452237, 11.6375 )
+
+[node name="DarkGrass7" parent="Level2Scaled" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28665, 0.452237, 11.6375 )
+
+[node name="DarkGrass8" parent="Level2Scaled" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.46628, 0.452237, 4.29085 )
+
+[node name="DarkGrass9" parent="Level2Scaled" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.31424, 0.452237, 4.29085 )
+
+[node name="DarkGrass10" parent="Level2Scaled" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.31786, 0.452237, 2.13882 )
+
+[node name="DarkGrass11" parent="Level2Scaled" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.208839, 0.452237, 11.2664 )
+
+[node name="DarkGrass12" parent="Level2Scaled" instance=ExtResource( 5 )]
+unique_name_in_owner = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.208839, 0.452237, 13.3442 )
+
+[node name="DarkGrass13" parent="Level2Scaled" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.208839, 0.452237, 13.3442 )
+
+[node name="Grass" parent="Level2Scaled" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.07646, 0.425235, 2.35573 )
+
+[node name="Grass2" parent="Level2Scaled" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.985573, 0.425235, 0.336494 )
+
+[node name="Grass3" parent="Level2Scaled" instance=ExtResource( 6 )]
+unique_name_in_owner = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66812, 0.425235, 0.336494 )
+
+[node name="Grass4" parent="Level2Scaled" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.66812, 0.425235, 2.39532 )
+
+[node name="Grass5" parent="Level2Scaled" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75594, 0.425235, 3.29424 )
+
+[node name="Grass6" parent="Level2Scaled" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.88684, 0.425235, 1.20642 )
+
+[node name="Grass7" parent="Level2Scaled" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.80151, 0.425235, -0.185461 )
+
+[node name="Grass9" parent="Level2Scaled" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3199, 0.425235, 6.0948 )
+
+[node name="Grass10" parent="Level2Scaled" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.75549, 0.42523, 8.07349 )
+
+[node name="Grass11" parent="Level2Scaled" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6426, 0.425235, 9.25881 )
+
+[node name="DarkGrass" parent="Level2Scaled" instance=ExtResource( 5 )]
+unique_name_in_owner = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.43073, 0.452237, 11.5948 )
+
+[node name="Ruby" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172082, 1.55516, -3.85471 )
+
+[node name="OmniLight" type="OmniLight" parent="Ruby"]
+transform = Transform( 1, -4.18429e-10, 6.69945e-11, 4.07454e-10, 0.992864, 0.119253, -1.16415e-10, -0.119253, 0.992864, 0.392291, 0.68969, -0.578836 )
+light_energy = 4.693
+light_indirect_energy = 2.761
+light_specular = 0.486
+shadow_enabled = true
+
+[node name="CameraTarget" type="Spatial" parent="Ruby"]
+transform = Transform( -1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0.5, -2 )
+
+[node name="RubyPos" type="Position3D" parent="Ruby"]
+
+[node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
+transform = Transform( -0.999934, -0.0114715, 0.0010586, -0.0112929, 0.994217, 0.106791, -0.00227754, 0.106772, -0.994281, 0.239441, 0.947306, -2.46673 )
+fov = 62.2207
+target = NodePath("../Ruby/CameraTarget")
+speed = 7.0
+enabled = true
+script = ExtResource( 7 )
+
+[node name="EncounterCamera" type="AnimationPlayer" parent="InterpolatedCamera"]
+anims/encounterZoomIn = SubResource( 1 )
+
+[node name="CameraLimits" type="Area" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="CameraLimits"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97172, 0, 4.33731 )
+shape = SubResource( 2 )
+
+[node name="CameraArea" type="MeshInstance" parent="CameraLimits"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51974, 0, 2.55259 )
+visible = false
+mesh = SubResource( 3 )
+skeleton = NodePath("../..")
+
+[node name="xmax" type="Position3D" parent="CameraLimits"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0451, 0, -0.615295 )
+
+[node name="xmin" type="Position3D" parent="CameraLimits"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7068, 0, 0 )
+
+[node name="zmax" type="Position3D" parent="CameraLimits"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.753227, 0, 10.3949 )
+
+[node name="zmin" type="Position3D" parent="CameraLimits"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.82013e-05, 0, -5.12837 )
+
+[node name="Sign" parent="." instance=ExtResource( 11 )]
+transform = Transform( 0.976035, 0, -0.217615, 0, 1, 0, 0.217615, 0, 0.976035, 7.59669, 0.503673, 12.747 )
+
+[node name="Player_SaveSpawn" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.47524, 0.295043, 13.0804 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 17 )
+autoplay = true

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Resource/Adventures/AdventureClasses/ItemAdventure.gd" type="Script" id=1]
+[ext_resource path="res://Resource/Items/itemRepository/chomamas_baked_apple_pie.tres" type="Resource" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "The Real Deal"
+description = "IT'S TIME TO D-D-D-D-DD-D-DUEL!! Now we can really go to the deeper woods xD"
+reward = [ ExtResource( 2 ) ]
+post_quest_message = [ "Is that... Chomama's Baked Apple Pie?", ".....", "Looks good.", "..............", ".........................", "The Chief can be scary", "Please", "Don't make my life harder" ]
+post_talk_to_me = "...."
+next_quest_hint = "that was a fun day! :D Ty for playing!"
+quest_id = 2
+amount_to_collect = 1
+item_needed = ExtResource( 2 )

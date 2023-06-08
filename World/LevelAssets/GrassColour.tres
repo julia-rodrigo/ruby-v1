@@ -1,0 +1,221 @@
+[gd_resource type="ShaderMaterial" load_steps=24 format=2]
+
+[sub_resource type="VisualShaderNodeColorUniform" id=31]
+uniform_name = "Albedo"
+default_value_enabled = true
+default_value = Color( 0.055481, 0.394531, 0.0925646, 1 )
+
+[sub_resource type="VisualShaderNodeTransformVecMult" id=32]
+operator = 1
+
+[sub_resource type="VisualShaderNodeInput" id=33]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeVectorOp" id=34]
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id=35]
+
+[sub_resource type="VisualShaderNodeVectorOp" id=36]
+operator = 2
+
+[sub_resource type="VisualShaderNodeScalarFunc" id=37]
+function = 31
+
+[sub_resource type="VisualShaderNodeVectorLen" id=38]
+
+[sub_resource type="VisualShaderNodeScalarSmoothStep" id=39]
+default_input_values = [ 0, 1.0, 1, 0.0, 2, 0.0 ]
+
+[sub_resource type="VisualShaderNodeVectorOp" id=40]
+default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 1, 0, 1 ) ]
+operator = 2
+
+[sub_resource type="VisualShaderNodeVec3Uniform" id=41]
+uniform_name = "PlayerPosition"
+
+[sub_resource type="VisualShaderNodeInput" id=42]
+input_name = "uv"
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=43]
+uniform_name = "Radius"
+
+[sub_resource type="VisualShaderNodeScalarUniform" id=44]
+uniform_name = "force"
+
+[sub_resource type="VisualShaderNodeVectorOp" id=45]
+operator = 2
+
+[sub_resource type="VisualShaderNodeInput" id=46]
+input_name = "vertex"
+
+[sub_resource type="VisualShaderNodeVectorOp" id=47]
+
+[sub_resource type="VisualShaderNodeTransformVecMult" id=48]
+
+[sub_resource type="VisualShaderNodeInput" id=49]
+input_name = "world"
+
+[sub_resource type="VisualShaderNodeVectorOp" id=50]
+default_input_values = [ 0, Vector3( 0, 0, 0 ), 1, Vector3( 1, 0, 1 ) ]
+operator = 2
+
+[sub_resource type="VisualShaderNodeVectorFunc" id=51]
+
+[sub_resource type="VisualShaderNodeInput" id=52]
+input_name = "world"
+
+[sub_resource type="VisualShader" id=53]
+code = "shader_type spatial;
+render_mode cull_disabled, specular_schlick_ggx, async_visible;
+
+uniform float Radius;
+uniform vec3 PlayerPosition;
+uniform float force;
+uniform vec4 Albedo : hint_color = vec4(0.055481, 0.394531, 0.092565, 1.000000);
+
+
+
+void vertex() {
+// Input:11
+	vec3 n_out11p0 = VERTEX;
+
+// ScalarUniform:21
+	float n_out21p0 = Radius;
+
+// Input:6
+	mat4 n_out6p0 = WORLD_MATRIX;
+
+// Input:3
+	vec3 n_out3p0 = VERTEX;
+
+// TransformVectorMult:5
+	vec3 n_out5p0 = (n_out6p0 * vec4(n_out3p0, 1.0)).xyz;
+
+// VectorUniform:2
+	vec3 n_out2p0 = PlayerPosition;
+
+// VectorOp:4
+	vec3 n_out4p0 = n_out5p0 + n_out2p0;
+
+// VectorLen:17
+	float n_out17p0 = length(n_out4p0);
+
+// ScalarSmoothStep:18
+	float n_in18p1 = 0.00000;
+	float n_out18p0 = smoothstep(n_out21p0, n_in18p1, n_out17p0);
+
+// Input:9
+	mat4 n_out9p0 = WORLD_MATRIX;
+
+// VectorOp:7
+	vec3 n_in7p1 = vec3(1.00000, 0.00000, 1.00000);
+	vec3 n_out7p0 = n_out4p0 * n_in7p1;
+
+// VectorFunc:8
+	vec3 n_out8p0 = normalize(n_out7p0);
+
+// TransformVectorMult:10
+	vec3 n_out10p0 = (vec4(n_out8p0, 1.0) * n_out9p0).xyz;
+
+// Input:20
+	vec3 n_out20p0 = vec3(UV, 0.0);
+
+// VectorDecompose:14
+	float n_out14p0 = n_out20p0.x;
+	float n_out14p1 = n_out20p0.y;
+	float n_out14p2 = n_out20p0.z;
+
+// ScalarFunc:16
+	float n_out16p0 = 1.0 - n_out14p1;
+
+// VectorOp:15
+	vec3 n_out15p0 = n_out10p0 * vec3(n_out16p0);
+
+// VectorOp:19
+	vec3 n_out19p0 = vec3(n_out18p0) * n_out15p0;
+
+// ScalarUniform:22
+	float n_out22p0 = force;
+
+// VectorOp:23
+	vec3 n_out23p0 = n_out19p0 * vec3(n_out22p0);
+
+// VectorOp:12
+	vec3 n_out12p0 = n_out11p0 + n_out23p0;
+
+// Output:0
+	VERTEX = n_out12p0;
+
+}
+
+void fragment() {
+// ColorUniform:2
+	vec3 n_out2p0 = Albedo.rgb;
+	float n_out2p1 = Albedo.a;
+
+// Output:0
+	ALBEDO = n_out2p0;
+
+}
+
+void light() {
+// Output:0
+
+}
+"
+graph_offset = Vector2( -185.524, 107.02 )
+modes/cull = 2
+nodes/vertex/0/position = Vector2( 1280, 100 )
+nodes/vertex/2/node = SubResource( 41 )
+nodes/vertex/2/position = Vector2( -640, 220 )
+nodes/vertex/3/node = SubResource( 46 )
+nodes/vertex/3/position = Vector2( -600, 60 )
+nodes/vertex/4/node = SubResource( 47 )
+nodes/vertex/4/position = Vector2( -140, 120 )
+nodes/vertex/5/node = SubResource( 48 )
+nodes/vertex/5/position = Vector2( -420, -40 )
+nodes/vertex/6/node = SubResource( 49 )
+nodes/vertex/6/position = Vector2( -600, -60 )
+nodes/vertex/7/node = SubResource( 50 )
+nodes/vertex/7/position = Vector2( 60, 200 )
+nodes/vertex/8/node = SubResource( 51 )
+nodes/vertex/8/position = Vector2( 280, 260 )
+nodes/vertex/9/node = SubResource( 52 )
+nodes/vertex/9/position = Vector2( 260, 140 )
+nodes/vertex/10/node = SubResource( 32 )
+nodes/vertex/10/position = Vector2( 520, 240 )
+nodes/vertex/11/node = SubResource( 33 )
+nodes/vertex/11/position = Vector2( 1020, -140 )
+nodes/vertex/12/node = SubResource( 34 )
+nodes/vertex/12/position = Vector2( 1080, 60 )
+nodes/vertex/14/node = SubResource( 35 )
+nodes/vertex/14/position = Vector2( 220, 380 )
+nodes/vertex/15/node = SubResource( 36 )
+nodes/vertex/15/position = Vector2( 820, 220 )
+nodes/vertex/16/node = SubResource( 37 )
+nodes/vertex/16/position = Vector2( 460, 400 )
+nodes/vertex/17/node = SubResource( 38 )
+nodes/vertex/17/position = Vector2( 60, 60 )
+nodes/vertex/18/node = SubResource( 39 )
+nodes/vertex/18/position = Vector2( 260, -60 )
+nodes/vertex/19/node = SubResource( 40 )
+nodes/vertex/19/position = Vector2( 860, 40 )
+nodes/vertex/20/node = SubResource( 42 )
+nodes/vertex/20/position = Vector2( 20, 420 )
+nodes/vertex/21/node = SubResource( 43 )
+nodes/vertex/21/position = Vector2( -120, -120 )
+nodes/vertex/22/node = SubResource( 44 )
+nodes/vertex/22/position = Vector2( 760, 380 )
+nodes/vertex/23/node = SubResource( 45 )
+nodes/vertex/23/position = Vector2( 1040, 220 )
+nodes/vertex/connections = PoolIntArray( 2, 0, 4, 1, 6, 0, 5, 0, 3, 0, 5, 1, 5, 0, 4, 0, 4, 0, 7, 0, 7, 0, 8, 0, 9, 0, 10, 0, 8, 0, 10, 1, 11, 0, 12, 0, 12, 0, 0, 0, 10, 0, 15, 0, 14, 1, 16, 0, 4, 0, 17, 0, 17, 0, 18, 2, 18, 0, 19, 0, 15, 0, 19, 1, 16, 0, 15, 1, 20, 0, 14, 0, 21, 0, 18, 0, 23, 0, 12, 1, 22, 0, 23, 1, 19, 0, 23, 0 )
+nodes/fragment/2/node = SubResource( 31 )
+nodes/fragment/2/position = Vector2( 0, 140 )
+nodes/fragment/connections = PoolIntArray( 2, 0, 0, 0 )
+
+[resource]
+shader = SubResource( 53 )
+shader_param/Radius = 1.0
+shader_param/PlayerPosition = null
+shader_param/force = 0.5
+shader_param/Albedo = Color( 0.596078, 0.32549, 0.0862745, 1 )

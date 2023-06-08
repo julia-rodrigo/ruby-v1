@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Oak_Green_01.obj-645820fb1c39d769efbd3dd8810c0dcc.mesh"
+
+[deps]
+
+files=[ "res://.import/Oak_Green_01.obj-645820fb1c39d769efbd3dd8810c0dcc.mesh" ]
+
+source_file="res://World/forestdownloadAssets/Models/Oak_Green_01.obj"
+dest_files=[ "res://.import/Oak_Green_01.obj-645820fb1c39d769efbd3dd8810c0dcc.mesh", "res://.import/Oak_Green_01.obj-645820fb1c39d769efbd3dd8810c0dcc.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

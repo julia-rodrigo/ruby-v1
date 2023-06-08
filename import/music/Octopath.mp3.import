@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Octopath.mp3-9bd15246a060833b8f1825fcff9fa415.mp3str"
+
+[deps]
+
+source_file="res://import/music/Octopath.mp3"
+dest_files=[ "res://.import/Octopath.mp3-9bd15246a060833b8f1825fcff9fa415.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

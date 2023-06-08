@@ -1,0 +1,18 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Resource/Items/ItemClass/Item.gd" type="Script" id=1]
+[ext_resource path="res://import/items/little_apple.png" type="Texture" id=5]
+
+[resource]
+script = ExtResource( 1 )
+name = "Money"
+amount = 200
+little_texture = ExtResource( 5 )
+description = "We can use this to pay the baker!"
+hover_text = "money money money money xD"
+chance = 20
+held_by = [  ]
+stackable = true
+max_stack_size = 100000
+type = 0
+food = false

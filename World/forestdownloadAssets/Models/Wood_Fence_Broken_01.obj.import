@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Wood_Fence_Broken_01.obj-3123c1e55693108318042f4bd618798e.mesh"
+
+[deps]
+
+files=[ "res://.import/Wood_Fence_Broken_01.obj-3123c1e55693108318042f4bd618798e.mesh" ]
+
+source_file="res://World/forestdownloadAssets/Models/Wood_Fence_Broken_01.obj"
+dest_files=[ "res://.import/Wood_Fence_Broken_01.obj-3123c1e55693108318042f4bd618798e.mesh", "res://.import/Wood_Fence_Broken_01.obj-3123c1e55693108318042f4bd618798e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

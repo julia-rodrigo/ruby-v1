@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://Resource/Items/ItemClass/QuestItem.gd" type="Script" id=1]
+[ext_resource path="res://import/items/little_apple.png" type="Texture" id=2]
+
+[resource]
+script = ExtResource( 1 )
+name = "Wild Tihi's Hat"
+amount = 1
+little_texture = ExtResource( 2 )
+description = "This must be the hat that the Wild Tihi is looking for. Let's give it back!"
+hover_text = "A hat worn by Tihis'. It's made of soft wool and has improved through generations of Tihi. Impressive!"
+chance = 0
+held_by = [  ]
+stackable = false
+max_stack_size = 1
+type = 2
+food = true
+quest_id = 0
+give_to = "The Wild Tihi"
+after_given_message = [ "T.T...", "!!!!!!", ":<<<<<<", ":>>>>>", "xD" ]

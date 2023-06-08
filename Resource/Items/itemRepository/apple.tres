@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Resource/Items/ItemClass/food_item_class.gd" type="Script" id=1]
+[ext_resource path="res://import/items/small_apple.png" type="Texture" id=2]
+[ext_resource path="res://import/items/little_apple.png" type="Texture" id=5]
+
+[resource]
+script = ExtResource( 1 )
+name = "Apple"
+amount = 1
+little_texture = ExtResource( 5 )
+big_texture = ExtResource( 2 )
+description = "A smart, light-weight snack made to health and dizziness"
+hover_text = "A tiny delicous treat found in the forests and is the national resource of the game"
+chance = 20
+held_by = [  ]
+stackable = true
+max_stack_size = 99
+type = 1
+food = true
+health_restore = 50
+level_up = 0
+stats_increase = 0
+damage = 0
+defence = 0
+health = 0
+experience = 1
+dizziness_recovery = 5

@@ -1,0 +1,28 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Resource/Items/ItemClass/food_item_class.gd" type="Script" id=1]
+[ext_resource path="res://import/items/small_apple.png" type="Texture" id=2]
+[ext_resource path="res://import/items/little_apple.png" type="Texture" id=5]
+
+[resource]
+script = ExtResource( 1 )
+name = "Golden Apple"
+amount = 1
+little_texture = ExtResource( 5 )
+big_texture = ExtResource( 2 )
+description = "A rare, shiny, OP apple that  increases level by 5 and stats by 15."
+hover_text = "This big naturally crafted glowing apple only grows  in the rarest areas of forests! What a find!"
+chance = 1
+held_by = [  ]
+stackable = true
+max_stack_size = 50
+type = 1
+food = true
+health_restore = 200
+level_up = 5
+stats_increase = 15
+damage = 15
+defence = 15
+health = 15
+experience = 21
+dizziness_recovery = 130

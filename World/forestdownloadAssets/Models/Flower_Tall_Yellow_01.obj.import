@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Flower_Tall_Yellow_01.obj-7ea4e1f7349194314f26f85535c67ffa.mesh"
+
+[deps]
+
+files=[ "res://.import/Flower_Tall_Yellow_01.obj-7ea4e1f7349194314f26f85535c67ffa.mesh" ]
+
+source_file="res://World/forestdownloadAssets/Models/Flower_Tall_Yellow_01.obj"
+dest_files=[ "res://.import/Flower_Tall_Yellow_01.obj-7ea4e1f7349194314f26f85535c67ffa.mesh", "res://.import/Flower_Tall_Yellow_01.obj-7ea4e1f7349194314f26f85535c67ffa.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

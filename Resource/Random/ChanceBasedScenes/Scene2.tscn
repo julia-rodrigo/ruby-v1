@@ -1,0 +1,10 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resource/Random/ChanceBasedScenes/Scene2.gd" type="Script" id=1]
+[ext_resource path="res://Resource/Random/Creatures/Tihi_fox.tres" type="Resource" id=2]
+[ext_resource path="res://Resource/Random/Creatures/Feet_cat.tres" type="Resource" id=3]
+[ext_resource path="res://Resource/Random/Creatures/hasven_goose.tres" type="Resource" id=4]
+
+[node name="Scene2" type="Node"]
+script = ExtResource( 1 )
+creatures_array = [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 2 ) ]

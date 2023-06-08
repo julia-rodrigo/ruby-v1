@@ -1,0 +1,673 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://import/interface/theme/font/default_font_comfortaa.tres" type="DynamicFont" id=1]
+[ext_resource path="res://import/interface/theme/font/comfortaa_tips.tres" type="DynamicFont" id=2]
+[ext_resource path="res://World/BattleUI/BigLevels/Level1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Opponent/Opponent.tscn" type="PackedScene" id=4]
+[ext_resource path="res://player/RubyBattle.tscn" type="PackedScene" id=5]
+[ext_resource path="res://creatures/Tihi.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Interactions/ButtonStyles/AttackButtons/NewDefaultDeepRedButton.tres" type="StyleBox" id=7]
+[ext_resource path="res://import/googleFonts/Poppins/Poppins-Medium.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Interactions/ButtonStyles/disabledButton.tres" type="StyleBox" id=9]
+[ext_resource path="res://player/Ruby.tscn" type="PackedScene" id=10]
+[ext_resource path="res://import/googleFonts/Poppins/Poppins-SemiBold.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://World/WildBattleEncounters/BattleScript/BattleEncounter.gd" type="Script" id=12]
+[ext_resource path="res://Interactions/ButtonStyles/PressedButton.tres" type="StyleBox" id=13]
+[ext_resource path="res://Interactions/ButtonStyles/HoverButton.tres" type="StyleBox" id=14]
+[ext_resource path="res://Interactions/ButtonStyles/yellowtextboxStyle/DeafultYellowTextBox.tres" type="StyleBox" id=15]
+[ext_resource path="res://Resource/Random/CreatureInstance/CreatureInstanceSprite.tscn" type="PackedScene" id=16]
+[ext_resource path="res://import/music/fubuki.mp3" type="AudioStream" id=17]
+
+[sub_resource type="DynamicFont" id=11]
+size = 25
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0, 0, 0, 0.294118 )
+
+[sub_resource type="DynamicFont" id=12]
+size = 20
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.494118, 1, 0.294118, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+expand_margin_left = 1.0
+expand_margin_right = 1.0
+expand_margin_top = 1.0
+expand_margin_bottom = 1.0
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 0.501961, 0.501961, 1 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.294118, 0.901961, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 1, 0.937255, 0, 1 )
+
+[sub_resource type="DynamicFont" id=14]
+size = 28
+font_data = ExtResource( 11 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 1, 1, 1, 1 )
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.239441, 0.947306, -2.46673 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -6.13036, 179.939, -0.650771 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.239441, 0.947306, -2.46673 ), Vector3( 0.239, 0.98, -2.467 ), Vector3( 0.239, 0.87, -2.467 ), Vector3( 0.239441, 0.947306, -2.46673 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+
+[sub_resource type="Animation" id=10]
+length = 0.8
+
+[node name="Level1Encounter" type="Spatial"]
+
+[node name="Spatial" parent="." instance=ExtResource( 3 )]
+
+[node name="Ruby" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66296, 1.16834, 1.69772 )
+visible = false
+
+[node name="BattleContainer" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3005, 0, 0.365181 )
+script = ExtResource( 12 )
+
+[node name="Control" type="Control" parent="BattleContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Timer" type="Timer" parent="BattleContainer/Control"]
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleContainer/Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 60
+custom_constants/margin_top = 100
+custom_constants/margin_left = 60
+
+[node name="Scene" type="VBoxContainer" parent="BattleContainer/Control/MarginContainer"]
+margin_left = 60.0
+margin_top = 100.0
+margin_right = 964.0
+margin_bottom = 611.0
+
+[node name="ActionPanel" type="HBoxContainer" parent="BattleContainer/Control/MarginContainer/Scene"]
+margin_right = 904.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+size_flags_horizontal = 7
+size_flags_vertical = 5
+custom_constants/separation = 20
+
+[node name="Attack1" type="Button" parent="BattleContainer/Control/MarginContainer/Scene/ActionPanel"]
+margin_right = 134.0
+margin_bottom = 60.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 11 )
+custom_styles/hover = ExtResource( 14 )
+custom_styles/pressed = ExtResource( 13 )
+custom_styles/disabled = ExtResource( 9 )
+custom_styles/normal = ExtResource( 7 )
+text = "Attack1"
+
+[node name="Attack2" type="Button" parent="BattleContainer/Control/MarginContainer/Scene/ActionPanel"]
+margin_left = 154.0
+margin_right = 288.0
+margin_bottom = 60.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 11 )
+custom_styles/hover = ExtResource( 14 )
+custom_styles/pressed = ExtResource( 13 )
+custom_styles/disabled = ExtResource( 9 )
+custom_styles/normal = ExtResource( 7 )
+text = "Attack2"
+
+[node name="Heal" type="Button" parent="BattleContainer/Control/MarginContainer/Scene/ActionPanel"]
+margin_left = 308.0
+margin_right = 442.0
+margin_bottom = 60.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 11 )
+custom_styles/hover = ExtResource( 14 )
+custom_styles/pressed = ExtResource( 13 )
+custom_styles/disabled = ExtResource( 9 )
+custom_styles/normal = ExtResource( 7 )
+text = "Heal"
+
+[node name="Swap" type="Button" parent="BattleContainer/Control/MarginContainer/Scene/ActionPanel"]
+margin_left = 462.0
+margin_right = 596.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 11 )
+custom_styles/hover = ExtResource( 14 )
+custom_styles/pressed = ExtResource( 13 )
+custom_styles/disabled = ExtResource( 9 )
+custom_styles/normal = ExtResource( 7 )
+text = "Swap"
+
+[node name="Catch" type="Button" parent="BattleContainer/Control/MarginContainer/Scene/ActionPanel"]
+margin_left = 616.0
+margin_right = 750.0
+margin_bottom = 60.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 11 )
+custom_styles/hover = ExtResource( 14 )
+custom_styles/pressed = ExtResource( 13 )
+custom_styles/disabled = ExtResource( 9 )
+custom_styles/normal = ExtResource( 7 )
+text = "Catch"
+
+[node name="Run" type="Button" parent="BattleContainer/Control/MarginContainer/Scene/ActionPanel"]
+margin_left = 770.0
+margin_right = 904.0
+margin_bottom = 60.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 11 )
+custom_styles/hover = ExtResource( 14 )
+custom_styles/pressed = ExtResource( 13 )
+custom_styles/disabled = ExtResource( 9 )
+custom_styles/normal = ExtResource( 7 )
+text = "Run"
+
+[node name="Field" type="HBoxContainer" parent="BattleContainer/Control/MarginContainer/Scene"]
+margin_top = 64.0
+margin_right = 904.0
+margin_bottom = 511.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.74
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleContainer/Control/MarginContainer/Scene/Field"]
+margin_right = 904.0
+margin_bottom = 447.0
+size_flags_horizontal = 7
+size_flags_vertical = 7
+size_flags_stretch_ratio = 0.18
+custom_constants/margin_right = 30
+custom_constants/margin_top = 320
+custom_constants/margin_left = 30
+custom_constants/margin_bottom = 50
+
+[node name="Versus" type="HBoxContainer" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer"]
+margin_left = 30.0
+margin_top = 320.0
+margin_right = 874.0
+margin_bottom = 397.0
+rect_min_size = Vector2( 844, 77 )
+size_flags_horizontal = 13
+size_flags_vertical = 12
+custom_constants/separation = 350
+
+[node name="PlayerPanel" type="Panel" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus"]
+margin_right = 247.0
+margin_bottom = 77.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 5 )
+
+[node name="container" type="MarginContainer" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/PlayerPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 30
+custom_constants/margin_top = 10
+custom_constants/margin_left = 30
+
+[node name="name" type="Label" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/PlayerPanel/container"]
+margin_left = 30.0
+margin_top = 10.0
+margin_right = 217.0
+margin_bottom = 77.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 12 )
+text = "Player"
+uppercase = true
+
+[node name="content" type="VBoxContainer" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/PlayerPanel/container"]
+margin_left = 30.0
+margin_top = 10.0
+margin_right = 217.0
+margin_bottom = 77.0
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/PlayerPanel/container/content"]
+margin_right = 187.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+custom_constants/margin_top = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/PlayerPanel/container/content/MarginContainer"]
+margin_right = 187.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -1
+
+[node name="Level" type="Label" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/PlayerPanel/container/content/MarginContainer/VBoxContainer"]
+margin_right = 187.0
+margin_bottom = 18.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Lv. 10"
+align = 2
+
+[node name="Health" type="Label" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/PlayerPanel/container/content/MarginContainer/VBoxContainer"]
+margin_top = 17.0
+margin_right = 187.0
+margin_bottom = 35.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "HP:25/50"
+align = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/PlayerPanel/container/content"]
+margin_top = 39.0
+margin_right = 187.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="line" type="MarginContainer" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/PlayerPanel/container/content/VBoxContainer"]
+margin_right = 187.0
+margin_bottom = 8.0
+custom_constants/margin_left = 20
+custom_constants/margin_bottom = 2
+
+[node name="HP" type="ProgressBar" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/PlayerPanel/container/content/VBoxContainer/line"]
+margin_left = 20.0
+margin_right = 187.0
+margin_bottom = 6.0
+rect_min_size = Vector2( 0, 6 )
+size_flags_horizontal = 3
+size_flags_vertical = 5
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+value = 50.0
+percent_visible = false
+
+[node name="EXP" type="ProgressBar" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/PlayerPanel/container/content/VBoxContainer"]
+margin_top = 12.0
+margin_right = 187.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 0, 3 )
+size_flags_horizontal = 3
+size_flags_vertical = 5
+custom_styles/fg = SubResource( 15 )
+value = 50.0
+percent_visible = false
+
+[node name="Dizziness" type="ProgressBar" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/PlayerPanel/container/content/VBoxContainer"]
+margin_top = 19.0
+margin_right = 187.0
+margin_bottom = 22.0
+rect_min_size = Vector2( 0, 3 )
+size_flags_horizontal = 3
+size_flags_vertical = 5
+custom_styles/fg = SubResource( 16 )
+value = 50.0
+percent_visible = false
+
+[node name="Player" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/PlayerPanel" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96536, 0.640862, -0.366987 )
+
+[node name="OmniLight" type="OmniLight" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/PlayerPanel/Player"]
+transform = Transform( 1, -4.18429e-10, 6.69945e-11, 4.07454e-10, 0.992864, 0.119253, -1.16415e-10, -0.119253, 0.992864, 0.392291, 1.38858, -0.578836 )
+light_energy = 4.693
+light_indirect_energy = 2.761
+light_specular = 0.486
+shadow_enabled = true
+
+[node name="CameraTarget" type="Spatial" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/PlayerPanel/Player"]
+transform = Transform( -1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, -1.47704, 0.555039, -2.59567 )
+
+[node name="Partner23" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/PlayerPanel" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.23823, 0.45292, -0.689217 )
+visible = false
+
+[node name="Partner" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/PlayerPanel" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.238, 0.453, -0.689 )
+
+[node name="EnemyPanel" type="Panel" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus"]
+margin_left = 597.0
+margin_right = 844.0
+margin_bottom = 77.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 5 )
+
+[node name="container" type="MarginContainer" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/EnemyPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 30
+custom_constants/margin_top = 10
+custom_constants/margin_left = 30
+
+[node name="name" type="Label" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/EnemyPanel/container"]
+margin_left = 30.0
+margin_top = 10.0
+margin_right = 217.0
+margin_bottom = 77.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = SubResource( 12 )
+text = "Player"
+align = 2
+uppercase = true
+
+[node name="content" type="VBoxContainer" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/EnemyPanel/container"]
+margin_left = 30.0
+margin_top = 10.0
+margin_right = 217.0
+margin_bottom = 77.0
+
+[node name="MarginContainer" type="MarginContainer" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/EnemyPanel/container/content"]
+margin_right = 187.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+custom_constants/margin_top = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/EnemyPanel/container/content/MarginContainer"]
+margin_right = 187.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = -1
+
+[node name="Level" type="Label" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/EnemyPanel/container/content/MarginContainer/VBoxContainer"]
+margin_right = 187.0
+margin_bottom = 18.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "Lv. 10"
+
+[node name="Health" type="Label" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/EnemyPanel/container/content/MarginContainer/VBoxContainer"]
+margin_top = 17.0
+margin_right = 187.0
+margin_bottom = 35.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+text = "HP:25/50"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/EnemyPanel/container/content"]
+margin_top = 39.0
+margin_right = 187.0
+margin_bottom = 67.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="line" type="MarginContainer" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/EnemyPanel/container/content/VBoxContainer"]
+margin_right = 187.0
+margin_bottom = 6.0
+custom_constants/margin_left = 20
+
+[node name="HP" type="ProgressBar" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/EnemyPanel/container/content/VBoxContainer/line"]
+margin_left = 20.0
+margin_right = 187.0
+margin_bottom = 6.0
+rect_min_size = Vector2( 0, 6 )
+size_flags_horizontal = 3
+size_flags_vertical = 5
+custom_styles/fg = SubResource( 3 )
+custom_styles/bg = SubResource( 4 )
+value = 50.0
+percent_visible = false
+
+[node name="Opponent" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/EnemyPanel" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8959, 0.655061, -0.331238 )
+visible = false
+
+[node name="Enemy" parent="BattleContainer/Control/MarginContainer/Scene/Field/MarginContainer/Versus/EnemyPanel" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.57635, 0.45292, -0.689217 )
+
+[node name="TextBoxArea" type="MarginContainer" parent="BattleContainer/Control"]
+visible = false
+light_mask = 2
+anchor_right = 1.0
+margin_bottom = 210.0
+custom_constants/margin_right = 60
+custom_constants/margin_top = 80
+custom_constants/margin_left = 60
+custom_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="BattleContainer/Control/TextBoxArea"]
+margin_left = 60.0
+margin_top = 80.0
+margin_right = 964.0
+margin_bottom = 200.0
+custom_styles/panel = ExtResource( 15 )
+
+[node name="Box" type="MarginContainer" parent="BattleContainer/Control/TextBoxArea/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+
+[node name="label" type="Label" parent="BattleContainer/Control/TextBoxArea/Panel/Box"]
+margin_right = 864.0
+margin_bottom = 83.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 14 )
+text = "Helllofdjkls m;djf;dsjmokrtjmoers;mvtorm toiemrsviosero;viters"
+autowrap = true
+
+[node name="ActionPanel" type="Panel" parent="BattleContainer/Control"]
+visible = false
+margin_left = 91.0
+margin_top = 124.0
+margin_right = 926.0
+margin_bottom = 184.0
+
+[node name="Action" type="HBoxContainer" parent="BattleContainer/Control/ActionPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 2.0
+margin_right = 2.0
+margin_bottom = 2.0
+mouse_filter = 2
+alignment = 1
+
+[node name="Attack" type="Button" parent="BattleContainer/Control/ActionPanel/Action"]
+margin_right = 275.0
+margin_bottom = 60.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+enabled_focus_mode = 0
+text = "Attack"
+
+[node name="Heal" type="Button" parent="BattleContainer/Control/ActionPanel/Action"]
+margin_left = 279.0
+margin_right = 555.0
+margin_bottom = 60.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+enabled_focus_mode = 0
+text = "Heal"
+
+[node name="Run" type="Button" parent="BattleContainer/Control/ActionPanel/Action"]
+margin_left = 559.0
+margin_right = 835.0
+margin_bottom = 60.0
+focus_mode = 0
+size_flags_horizontal = 3
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_colors/font_color_focus = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 2 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+enabled_focus_mode = 0
+text = "Run"
+
+[node name="TextBox" type="Panel" parent="BattleContainer/Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 30.0
+margin_top = 117.0
+margin_right = -29.0
+margin_bottom = -402.0
+custom_styles/panel = SubResource( 8 )
+
+[node name="Label" type="Label" parent="BattleContainer/Control/TextBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+custom_fonts/font = ExtResource( 1 )
+text = "A wild Tihi appeared!
+"
+
+[node name="Ticker" type="Label" parent="BattleContainer/Control/TextBox"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -35.0
+margin_top = -44.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = ">"
+
+[node name="Timer" type="Timer" parent="BattleContainer"]
+
+[node name="InterpolatedCamera" type="InterpolatedCamera" parent="BattleContainer"]
+transform = Transform( -0.999934, -0.0114715, 0.0010586, -0.0112929, 0.994217, 0.106791, -0.00227754, 0.106772, -0.994281, 0.239441, 0.947306, -2.46673 )
+
+[node name="PartnerCamera" type="AnimationPlayer" parent="BattleContainer/InterpolatedCamera"]
+anims/RESET = SubResource( 1 )
+anims/shake = SubResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BattleContainer"]
+anims/RESET = SubResource( 9 )
+anims/enemy_damaged = SubResource( 10 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource( 17 )
+autoplay = true
+
+[connection signal="pressed" from="BattleContainer/Control/MarginContainer/Scene/ActionPanel/Attack1" to="BattleContainer" method="_on_Attack1_pressed"]
+[connection signal="pressed" from="BattleContainer/Control/MarginContainer/Scene/ActionPanel/Attack2" to="BattleContainer" method="_on_Attack2_pressed"]
+[connection signal="pressed" from="BattleContainer/Control/MarginContainer/Scene/ActionPanel/Heal" to="BattleContainer" method="_on_Heal_pressed"]
+[connection signal="pressed" from="BattleContainer/Control/MarginContainer/Scene/ActionPanel/Swap" to="BattleContainer" method="_on_Swap_pressed"]
+[connection signal="pressed" from="BattleContainer/Control/MarginContainer/Scene/ActionPanel/Catch" to="BattleContainer" method="_on_Catch_pressed"]
+[connection signal="pressed" from="BattleContainer/Control/MarginContainer/Scene/ActionPanel/Run" to="BattleContainer" method="_on_Run_pressed"]
+[connection signal="pressed" from="BattleContainer/Control/ActionPanel/Action/Attack" to="BattleContainer" method="_on_Attack_pressed"]
+[connection signal="pressed" from="BattleContainer/Control/ActionPanel/Action/Heal" to="BattleContainer" method="_on_Heal_pressed"]
+[connection signal="pressed" from="BattleContainer/Control/ActionPanel/Action/Run" to="BattleContainer" method="_on_Run_pressed"]

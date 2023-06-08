@@ -1,0 +1,17 @@
+[gd_resource type="Resource" load_steps=4 format=2]
+
+[ext_resource path="res://Resource/Adventures/AdventureClasses/ItemAdventure.gd" type="Script" id=1]
+[ext_resource path="res://Resource/Items/itemRepository/tihi_hat.tres" type="Resource" id=2]
+[ext_resource path="res://Resource/Random/Creatures/Tihi_fox.tres" type="Resource" id=3]
+
+[resource]
+script = ExtResource( 1 )
+name = "Something's Wrong"
+description = "The Wild Tihi looks sad. Maybe something is missing."
+reward = [ ExtResource( 3 ) ]
+post_quest_message = [ "T.T...", "!!!!!!", ":<<<<<<", ":>>>>>", "xD" ]
+post_talk_to_me = [  ]
+next_quest_hint = "We got a new friend on our team! Now we can fight other Creatures!"
+quest_id = 0
+amount_to_collect = 1
+item_needed = ExtResource( 2 )
