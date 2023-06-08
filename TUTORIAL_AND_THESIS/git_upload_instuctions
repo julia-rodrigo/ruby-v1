@@ -1,0 +1,16 @@
+git init
+git status
+git add .
+git rm <>
+git commit -m "this is a message"
+git remote add origin <https://github.com/...>
+
+git push -u origin main
+git push -u origin master
+git push -u origin <name_of_branch>
+
+if you want to ignore everything from previous branches changes
+force changes though not recommended, it worked the best for me
+{
+    git push -f -u origin <...>
+}
